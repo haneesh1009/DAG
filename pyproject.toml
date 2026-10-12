@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netlist-dag"
+version = "0.1.0"
+description = "Library-aware structural Verilog to dependency DAG analyzer"
+requires-python = ">=3.9"
+license = "GPL-3.0-or-later"
+dependencies = ["networkx==3.2.1", "liberty-parser==0.0.29"]
+
+[project.optional-dependencies]
+portable = ["yowasp-yosys==0.69.0.0.post1233"]
+test = ["pytest==8.4.2"]
+
+[project.scripts]
+netlist-dag = "netlist_dag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

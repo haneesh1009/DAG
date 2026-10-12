@@ -1,0 +1,18 @@
+.venv/
+.cache/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+results/
+third_party/
+.DS_Store
+site-preview.jpg
+# Website source has its own Sites-managed Git repository.
+site/
+# Keep only the deliberately prepared project deliverables.
+output/*
+!output/Circuit-Atlas-Demo.zip
+!output/Circuit-Atlas-Live-Analyzer.zip
+!output/PRESENTATION-GUIDE.md

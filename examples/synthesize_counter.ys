@@ -1,0 +1,8 @@
+# Run from the repository root after downloading the public Nangate45 library.
+read_liberty -lib third_party/nangate45/NangateOpenCellLibrary_typical.lib
+read_verilog examples/counter_rtl.v
+synth -top counter -noabc
+dfflibmap -liberty third_party/nangate45/NangateOpenCellLibrary_typical.lib
+abc -liberty third_party/nangate45/NangateOpenCellLibrary_typical.lib
+clean
+write_verilog -noattr -noexpr results/counter_mapped.v
